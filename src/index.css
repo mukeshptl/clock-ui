@@ -11,3 +11,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.clock {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  margin: 10px auto;
+  transform: rotate(-90deg);
+}
+
+.second-hand,
+.minute-hand {
+  position: absolute;
+  top: calc(50% - 6px);
+  left: calc(50% - 4px);
+  background-color: #000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.second-hand.dragging,
+.minute-hand.dragging {
+  background-color: #eee;
+}
+
+.second-hand {
+  width: 90px;
+  height: 4px;
+  transform-origin: left center;
+}
+
+.minute-hand {
+  width: 80px;
+  height: 6px;
+  transform-origin: left center;
+}
+
